@@ -12,6 +12,11 @@ public class HelloController {
         return "This means that you were successful cory!";
     }
 
+    @GetMapping("/goodbye")
+    public String goodbye(){
+        return "Goodbye Cory!";
+    }
+
 }
 
 
