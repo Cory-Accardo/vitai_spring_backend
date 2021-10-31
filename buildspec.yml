@@ -12,7 +12,7 @@ phases:
   post_build:
     commands:
       - echo "Entered the post-build phase"
+      - mv target/alpha-SNAPSHOT.war ROOT.war
 artifacts:
   files:
-    - target/alpha-SNAPSHOT.war
-  discard-paths: yes
+    - ROOT.war
