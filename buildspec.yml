@@ -8,11 +8,10 @@ phases:
   build:
     commands:
       - echo "Entered build phase"
-      - mvn clean prepare-package war:exploded
+      - mvn clean install spring-boot:repackage
   post_build:
     commands:
       - echo "Entered the post-build phase"
-      - mv target/deploy ./
 artifacts:
   files:
-    - deploy/**/*
+    - target/alpha-SNAPSHOT.war
