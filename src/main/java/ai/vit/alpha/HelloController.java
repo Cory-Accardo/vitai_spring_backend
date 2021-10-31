@@ -17,6 +17,11 @@ public class HelloController {
         return "Goodbye Cory!";
     }
 
+    @GetMapping("/foopa")
+    public String foopa(){
+        return "troopa!";
+    }
+
 }
 
 
