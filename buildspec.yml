@@ -15,3 +15,4 @@ phases:
 artifacts:
   files:
     - target/alpha-SNAPSHOT.war
+  discard-paths: yes
