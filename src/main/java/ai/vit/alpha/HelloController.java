@@ -9,7 +9,7 @@ public class HelloController {
 
     @GetMapping("/welcome")
     public String welcome(){
-        return "This means that you were successful cory!";
+        return "This means that you were successful, cory!";
     }
 
     @GetMapping("/goodbye")
