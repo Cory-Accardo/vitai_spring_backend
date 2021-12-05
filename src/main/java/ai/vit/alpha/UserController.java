@@ -1,53 +1,18 @@
 package ai.vit.alpha;
 
-
 import ai.vit.alpha.model.Users;
 import ai.vit.alpha.repository.UsersRepository;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+import org.springframework.stereotype.Controller;
 
 import java.util.HashMap;
 import java.util.Map;
 
-@RestController
-public class HelloController {
-
-
-    UserController vitai = new UserController();
-
-    @GetMapping("/welcome")
-    public String welcome(){
-        return "This means that you were successful cory!";
-    }
-
-
-
-    @GetMapping("/goodbye")
-    @ResponseBody
-    public String goodbye(@RequestBody String body) throws JsonProcessingException {
-        HashMap<String, String> theBody;
-        ObjectMapper objectMapper = new ObjectMapper();
-        theBody = objectMapper.readValue(body, new TypeReference<HashMap<String, String>>() {});
-//        System.out.println(theBody.get("testArray"));
-//        ArrayList<String> arrl = (ArrayList<String>) theBody.get("testArray");
-//        System.out.println(arrl.get(0));
-        createUser(theBody);
-        theBody.forEach((v,k) -> {
-            System.out.println(v);
-            System.out.println(k);
-        });
-        System.out.println("username: " + theBody.get("username"));
-        return "Goodbye Cory!";
-    }
-
-    @GetMapping("/foopa")
-    public String foopa(){
-        return "troopa!";
-    }
+@Controller
+//@EnableMongoRepositories
+public class UserController {
 
     @Autowired
     UsersRepository userRepo;
@@ -106,14 +71,3 @@ public class HelloController {
     }
 
 }
-
-@ResponseStatus(value = HttpStatus.NOT_FOUND)
-class ResourceNotFoundException extends RuntimeException {
-}
-
-//LOOK AT THIS
-//    @ResponseBody
-//    public ResponseTransfer postResponseController(
-//            @RequestBody LoginForm loginForm) {
-//        return new ResponseTransfer("Thanks For Posting!!!");
-//    }

@@ -22,6 +22,15 @@ public class Users {
     public String homeCity;
     public String homeState;
     public ArrayList<Resumes> authorizedResumes;
+    public ArrayList<String> testArray;
+
+    public ArrayList<String> getTestArray() {
+        return testArray;
+    }
+
+    public void setTestArray(ArrayList<String> testArray) {
+        this.testArray = testArray;
+    }
 
     public String getUsername() {
         return username;
