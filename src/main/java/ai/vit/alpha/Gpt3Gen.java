@@ -37,7 +37,7 @@ public class Gpt3Gen {
         HttpRequest request = HttpRequest.newBuilder()
                 .POST(HttpRequest.BodyPublishers.ofString(json))
                 .uri(URI.create("https://api.openai.com/v1/engines/davinci/completions"))
-                .setHeader("Authorization", "Bearer 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") // add request header
+                .setHeader("Authorization", "Bearer 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") // add request header
                 .header("Content-Type", "application/json")
                 .build();
 
